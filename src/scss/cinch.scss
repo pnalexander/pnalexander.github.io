@@ -1,0 +1,95 @@
+*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+  /* Removes padding behavior on widths */
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* Attribute selector */
+[class*='columns-'] {
+  float: left;
+  padding: .3em;
+  overflow: hidden;
+}
+/* Floats last ".columns-" to the right */
+[class*='columns-']:last-of-type {
+  // padding-right: 2px;
+  /*float: right;*/
+}
+/* Base Styles */
+.row {
+  margin: 0 auto;
+  max-width: 100%;
+  overflow: hidden;
+}
+/* Clearfix */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.columns-12 {
+  width: percentage(12/12);
+}
+.columns-11 {
+  width: percentage(11/12);
+}
+.columns-10 {
+  width: percentage(10/12);
+}
+.columns-9 {
+  width: percentage(9/12);
+}
+.columns-8 {
+  width: percentage(8/12);
+}
+.columns-7 {
+  width: percentage(7/12);
+}
+.columns-6 {
+  width: percentage(6/12);
+}
+.columns-5 {
+  width: percentage(5/12);
+}
+.columns-4 {
+  width: percentage(4/12);
+}
+.columns-3 {
+  width: percentage(3/12);
+}
+.columns-2 {
+  width: percentage(2/12);
+}
+.columns-1 {
+  width: percentage(1/12);
+}
+@media (max-width:480px) {
+  [class*='columns-'] {
+    width: percentage(12/12);
+  }
+}
+img {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.box {
+  background: rgba(0,0,0,0.1);
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  padding: 1em;
+  overflow: hidden;
+}
+h1 {
+  font-size: 1.5em;
+  text-align: center;
+  vertical-align: middle;
+  font-family: 'Homizio Nova';
+  letter-spacing: 1px;
+}

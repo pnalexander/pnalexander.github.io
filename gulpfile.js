@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
+var nunjucksRender = require('gulp-nunjucks-render');
 // var autoprefixer = require('gulp-autoprefixer');
 // var sourcemaps = require('gulp-sourcemaps');
 var browserSync = require('browser-sync');
@@ -38,9 +39,23 @@ gulp.task('sass', function() {
     }));
 })
 
+// Template Engine
+gulp.task('nunjucks', function() {
+  // Gets .html and .njk (nunjucks) files in pages
+ return gulp.src('src/pages/**/*.+(html|njk)')
+ // Renders template with nunjucks
+ .pipe(nunjucksRender({
+     path: ['src/templates'],
+     ext: '.html'
+   }))
+ // output files in src folder (moved to dist folder for production)
+ .pipe(gulp.dest('src'))
+});
+
 // Watchers
 gulp.task('watch', function() {
   gulp.watch('src/scss/**/*.scss', ['sass']);
+  gulp.watch('src/**/*.+(html|njk)', ['nunjucks']);
   gulp.watch('src/*.html', browserSync.reload);
   gulp.watch('src/js/**/*.js', browserSync.reload);
 })
@@ -74,6 +89,17 @@ gulp.task('fonts', function() {
     .pipe(gulp.dest('dist/fonts'))
 })
 
+// Copying Vendor CSS
+gulp.task('vendor:css', function() {
+  return gulp.src('src/css/vendor/**/*')
+    .pipe(gulp.dest('dist/css/vendor'))
+})
+// Copying Vendor JS
+gulp.task('vendor:js', function() {
+  return gulp.src('src/js/vendor/**/*')
+    .pipe(gulp.dest('dist/js/vendor'))
+})
+
 // Cleaning
 gulp.task('clean', function() {
   return del.sync('dist').then(function(cb) {
@@ -83,6 +109,10 @@ gulp.task('clean', function() {
 
 gulp.task('clean:dist', function() {
   return del.sync(['dist/**/*', '!dist/images', '!dist/images/**/*']);
+});
+
+gulp.task('clean:root', function() {
+  return del.sync(['css', 'js']);
 });
 
 // Build Sequences
@@ -97,7 +127,10 @@ gulp.task('default', function(callback) {
 gulp.task('build', function(callback) {
   runSequence(
     'clean:dist',
+    ['vendor:css', 'vendor:js'],
+    'nunjucks',
     ['sass', 'useref', 'images', 'fonts'],
+    'clean:root',
     callback
   )
 })
