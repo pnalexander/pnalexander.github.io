@@ -1,0 +1,26 @@
+{# index.njk #}
+{# This is a comment in nunjucks. This will not be rendered in the final HTML #}
+{%- extends "layout.njk" -%}
+
+{% block main %}
+{%- import 'macros/head.njk' as head -%}
+{{head.meta(title='XanderWorks')}}
+<header>
+  {# Import nav menu #}
+  {%- import 'macros/nav.njk' as nav -%}
+  {# Set the active page #}
+  {{nav.active('home')}}
+</header>
+
+<main>
+  <div class="parallax-container valign-wrapper top-parallax">
+    <div class="parallax"><img src="images/raleigh_skyline_color2.jpg" class="banner-img"></div>
+    <div class="row container section">
+      <h1 class="valign center-align white-text shadow">XanderWorks</h1>
+    </div>
+  </div>
+</main>
+
+{# Include footer #}
+{# {% include 'partials/footer.njk' %} #}
+{%- endblock main -%}

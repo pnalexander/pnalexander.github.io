@@ -1,0 +1,26 @@
+{% macro meta(title='XanderWorks', description='Web Development and Design based in Raleigh, NC.') %}
+<!DOCTYPE html>
+<html lang="en">
+<!-- Add a head block -->
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+    <meta name="keywords" content="web, website, web design, web development, design, development, internet">
+    <meta name="description" content="{{ description }}">
+
+    {# <meta property="og:title" content="Refab Wood, LLC" />
+    <meta property="og:description" content="Commercial &amp; Residential Furniture. Operating out of Raleigh, NC since 2012." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://refabwood.com/" />
+    <meta property="og:image" content="http://refabwood.com/images/og_image_v2.png" /> #}
+
+    <title>{{ title }}</title>
+
+    <!-- CSS  -->
+    <link rel="stylesheet" href="css/vendor/materialize.css">
+    <!--build:css css/styles.min.css-->
+    <link rel="stylesheet" href="css/styles.css">
+    <!--endbuild-->
+  </head>
+  <body>
+{% endmacro %}

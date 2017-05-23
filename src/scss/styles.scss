@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Oxygen');
+
+* {
+  font-family: 'Oxygen';
+}
+
+.shadow {
+  text-shadow: .05em .05em .15em black;
+}
+
+nav {
+  box-shadow: none !important;
+  background: none;
+  ul a {
+    font-size: 1.25rem;
+    color: rgba(255,255,255,0.8);
+    transition: .3s;
+    &:hover {
+      background: none;
+      color: rgba(255,255,255,1);
+    }
+  }
+}
+.top-parallax {
+  z-index: -1;
+}
+.parallax-container {
+  height: 564px;
+  margin-top: -64px;
+}

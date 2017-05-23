@@ -1,91 +1,24 @@
-*,
-*:after,
-*:before {
-  margin: 0;
-  padding: 0;
-  /* Removes padding behavior on widths */
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box; }
+@import url("https://fonts.googleapis.com/css?family=Oxygen");
+* {
+  font-family: 'Oxygen'; }
 
-/* Attribute selector */
-[class*='columns-'] {
-  float: left;
-  padding: .3em;
-  overflow: hidden; }
+.shadow {
+  text-shadow: .05em .05em .15em black; }
 
-/* Floats last ".columns-" to the right */
-[class*='columns-']:last-of-type {
-  /*float: right;*/ }
+nav {
+  box-shadow: none !important;
+  background: none; }
+  nav ul a {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.8);
+    transition: .3s; }
+    nav ul a:hover {
+      background: none;
+      color: white; }
 
-/* Base Styles */
-.row {
-  margin: 0 auto;
-  max-width: 100%;
-  overflow: hidden; }
+.top-parallax {
+  z-index: -1; }
 
-/* Clearfix */
-.row:after {
-  content: "";
-  display: table;
-  clear: both; }
-
-.columns-12 {
-  width: 100%; }
-
-.columns-11 {
-  width: 91.66667%; }
-
-.columns-10 {
-  width: 83.33333%; }
-
-.columns-9 {
-  width: 75%; }
-
-.columns-8 {
-  width: 66.66667%; }
-
-.columns-7 {
-  width: 58.33333%; }
-
-.columns-6 {
-  width: 50%; }
-
-.columns-5 {
-  width: 41.66667%; }
-
-.columns-4 {
-  width: 33.33333%; }
-
-.columns-3 {
-  width: 25%; }
-
-.columns-2 {
-  width: 16.66667%; }
-
-.columns-1 {
-  width: 8.33333%; }
-
-@media (max-width: 480px) {
-  [class*='columns-'] {
-    width: 100%; } }
-
-img {
-  display: block;
-  width: 100%;
-  margin: 0 auto; }
-
-.box {
-  background: rgba(0, 0, 0, 0.1);
-  width: 100%;
-  height: auto;
-  border-radius: 4px;
-  padding: 1em;
-  overflow: hidden; }
-
-h1 {
-  font-size: 1.5em;
-  text-align: center;
-  vertical-align: middle;
-  font-family: 'Homizio Nova';
-  letter-spacing: 1px; }
+.parallax-container {
+  height: 564px;
+  margin-top: -64px; }
