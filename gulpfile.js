@@ -71,7 +71,7 @@ gulp.task('useref', function() {
     .pipe(gulpIf('*.js', uglify()))
     .pipe(gulpIf('*.css', cssnano()))
     // .pipe(gulp.dest('dist'));
-    .pipe(gulp.dest('/'));
+    .pipe(gulp.dest(''));
 });
 
 // Optimizing Images
