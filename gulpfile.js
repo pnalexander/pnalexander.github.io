@@ -70,7 +70,8 @@ gulp.task('useref', function() {
     .pipe(useref())
     .pipe(gulpIf('*.js', uglify()))
     .pipe(gulpIf('*.css', cssnano()))
-    .pipe(gulp.dest('dist'));
+    // .pipe(gulp.dest('dist'));
+    .pipe(gulp.dest('/'));
 });
 
 // Optimizing Images
@@ -80,24 +81,28 @@ gulp.task('images', function() {
     .pipe(cache(imagemin({
       interlaced: true,
     })))
-    .pipe(gulp.dest('dist/images'))
+    // .pipe(gulp.dest('dist/images'))
+    .pipe(gulp.dest('images'))
 });
 
 // Copying fonts
 gulp.task('fonts', function() {
   return gulp.src('src/fonts/**/*')
-    .pipe(gulp.dest('dist/fonts'))
+    // .pipe(gulp.dest('dist/fonts'))
+    .pipe(gulp.dest('fonts'))
 })
 
 // Copying Vendor CSS
 gulp.task('vendor:css', function() {
   return gulp.src('src/css/vendor/**/*')
-    .pipe(gulp.dest('dist/css/vendor'))
+    // .pipe(gulp.dest('dist/css/vendor'))
+    .pipe(gulp.dest('css/vendor'))
 })
 // Copying Vendor JS
 gulp.task('vendor:js', function() {
   return gulp.src('src/js/vendor/**/*')
-    .pipe(gulp.dest('dist/js/vendor'))
+    // .pipe(gulp.dest('dist/js/vendor'))
+    .pipe(gulp.dest('js/vendor'))
 })
 
 // Cleaning
@@ -126,11 +131,11 @@ gulp.task('default', function(callback) {
 
 gulp.task('build', function(callback) {
   runSequence(
-    'clean:dist',
+    // 'clean:dist',
     ['vendor:css', 'vendor:js'],
     'nunjucks',
     ['sass', 'useref', 'images', 'fonts'],
-    'clean:root',
+    // 'clean:root',
     callback
   )
 })
