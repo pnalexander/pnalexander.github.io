@@ -8,7 +8,18 @@
     <script src="js/vendor/materialize.min.js"></script>
     <script>
       $(document).ready(function(){
+        $('.nav-wrapper').pushpin({
+          top: 0,
+          bottom: 500,
+          offset: 0
+        });
         $('.parallax').parallax();
+
+        var options = [
+          {selector: '.scrollfire-test', offset: 200, callback: function(e) {Materialize.fadeInImage($(e))} }
+        ];
+        Materialize.scrollFire(options);
+        $('.scrollspy').scrollSpy();
       });
     </script>
   </body>

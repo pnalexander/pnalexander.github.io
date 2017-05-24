@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Oxygen');
+@import url('https://fonts.googleapis.com/css?family=Oxygen:300,400,700');
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700');
 
 * {
   font-family: 'Oxygen';
@@ -7,10 +9,24 @@
 .shadow {
   text-shadow: .05em .05em .15em black;
 }
+.shadow-med {
+  text-shadow: .05em .05em .1em rgba(0,0,0,0.85);
+}
+.shadow-light {
+  text-shadow: .005em .005em .05em rgba(0,0,0,0.7);
+}
+.bold {
+  font-weight: 700;
+}
 
 nav {
   box-shadow: none !important;
   background: none;
+  .pinned {
+    .brand-logo {
+      position: fixed;
+    }
+  }
   ul a {
     font-size: 1.25rem;
     color: rgba(255,255,255,0.8);
@@ -27,4 +43,19 @@ nav {
 .parallax-container {
   height: 564px;
   margin-top: -64px;
+}
+.motto {
+  font-family: 'Open Sans', sans-serif;
+}
+.header, .article-title {
+  font-family: 'Open Sans', sans-serif;
+}
+.title-icon {
+  font-size: 3rem;
+}
+.index-article {
+  font-size: 1.25rem;
+}
+.scrollfire-test {
+  opacity:0;
 }
