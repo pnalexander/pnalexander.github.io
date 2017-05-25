@@ -16,7 +16,9 @@
         $('.parallax').parallax();
 
         var options = [
-          {selector: '.scrollfire-test', offset: 200, callback: function(e) {Materialize.fadeInImage($(e))} }
+          {selector: '.scrollfire-1', offset: 200, callback: function(e) {Materialize.fadeInImage($(e))} },
+          {selector: '.scrollfire-2', offset: 200, callback: function(e) {Materialize.fadeInImage($(e))} },
+          {selector: '.scrollfire-3', offset: 100, callback: function(e) {Materialize.fadeInImage($(e))} }
         ];
         Materialize.scrollFire(options);
         $('.scrollspy').scrollSpy({scrollOffset:15});
