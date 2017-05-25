@@ -19,7 +19,7 @@
           {selector: '.scrollfire-test', offset: 200, callback: function(e) {Materialize.fadeInImage($(e))} }
         ];
         Materialize.scrollFire(options);
-        $('.scrollspy').scrollSpy();
+        $('.scrollspy').scrollSpy({scrollOffset:15});
       });
     </script>
   </body>

@@ -23,11 +23,27 @@ nav {
     position: fixed; }
   nav ul a {
     font-size: 1.25rem;
-    color: rgba(255, 255, 255, 0.8);
-    transition: .3s; }
+    position: relative; }
     nav ul a:hover {
-      background: none;
-      color: white; }
+      background: none; }
+    nav ul a:before {
+      content: "";
+      position: absolute;
+      width: 75%;
+      height: 2px;
+      bottom: 10px;
+      left: 12.5%;
+      background-color: #fff;
+      visibility: hidden;
+      -webkit-transform: scaleX(0);
+      transform: scaleX(0);
+      -webkit-transition: all 0.3s ease-in-out 0s;
+      transition: all 0.275s ease-in-out 0s;
+      box-shadow: 0.005em 0.005em 0.05em rgba(0, 0, 0, 0.7); }
+    nav ul a:hover:before {
+      visibility: visible;
+      -webkit-transform: scaleX(1);
+      transform: scaleX(1); }
 
 .top-parallax {
   z-index: -1; }
@@ -35,6 +51,9 @@ nav {
 .parallax-container {
   height: 564px;
   margin-top: -64px; }
+
+h2 {
+  font-size: 1.25rem; }
 
 .motto {
   font-family: 'Open Sans', sans-serif; }

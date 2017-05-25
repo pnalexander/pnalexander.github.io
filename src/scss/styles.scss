@@ -29,11 +29,32 @@ nav {
   }
   ul a {
     font-size: 1.25rem;
-    color: rgba(255,255,255,0.8);
-    transition: .3s;
+    // color: rgba(255,255,255,0.8);
+    // transition: .3s;
+    position: relative;
     &:hover {
       background: none;
-      color: rgba(255,255,255,1);
+      // color: rgba(255,255,255,1);
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      width: 75%;
+      height: 2px;
+      bottom: 10px;
+      left: 12.5%;
+      background-color: #fff;
+      visibility: hidden;
+      -webkit-transform: scaleX(0);
+      transform: scaleX(0);
+      -webkit-transition: all 0.3s ease-in-out 0s;
+      transition: all 0.275s ease-in-out 0s;
+      box-shadow: .005em .005em .05em rgba(0,0,0,0.7);
+    }
+    &:hover:before {
+      visibility: visible;
+      -webkit-transform: scaleX(1);
+      transform: scaleX(1);
     }
   }
 }
@@ -43,6 +64,9 @@ nav {
 .parallax-container {
   height: 564px;
   margin-top: -64px;
+}
+h2 {
+  font-size: 1.25rem;
 }
 .motto {
   font-family: 'Open Sans', sans-serif;
