@@ -68,12 +68,12 @@
     </div>
   </section>
   <section class="section cyan accent-2 center z-depth-2">
-    <div class="scrollfire-test">
+    <div class="">
       <div class="row container black-text">
         <div id="services" class="col s12 scrollspy">
           <h3 class="section header">Services</h3>
         </div>
-        <div class="row section">
+        <div class="row section scrollfire-1">
           <article class="col s12 m4">
             <h4><i class="material-icons title-icon">content_copy</i></h4>
             <h5 class="article-title">Content Management</h5>
@@ -95,7 +95,7 @@
         <div class="col s12">
           <h3 class="section header">Key Features</h3>
         </div>
-        <div class="row section">
+        <div class="row section scrollfire-2">
           <article class="col s12 m4">
             <h4><i class="material-icons title-icon">devices</i></h4>
             <h5 class="article-title">Responsive</h5>
@@ -112,12 +112,12 @@
             <p class="index-article">Put your mind at ease knowing your information is protected from prying eyes. All sensitive data is encrypted and transmitted over a secure network.</p>
           </article>
         </div>
-        <div class="row section">
+        <div class="row section scrollfire-3">
           
           <article class="col s12 m4">
             <h4><i class="material-icons title-icon">feedback</i></h4>
             <h5 class="article-title">Reactive</h5>
-            <p class="index-article">Key visual queues let users know when something succeeded or went wrong. For every action there's and equal and opposite reaction.</p>
+            <p class="index-article">Key visual queues let users know when something succeeded or went wrong. For every action there's an equal and opposite reaction.</p>
           </article>
           <article class="col s12 m4">
             <h4><i class="material-icons title-icon">access_time</i></h4>
@@ -152,7 +152,9 @@
         $('.parallax').parallax();
 
         var options = [
-          {selector: '.scrollfire-test', offset: 200, callback: function(e) {Materialize.fadeInImage($(e))} }
+          {selector: '.scrollfire-1', offset: 200, callback: function(e) {Materialize.fadeInImage($(e))} },
+          {selector: '.scrollfire-2', offset: 200, callback: function(e) {Materialize.fadeInImage($(e))} },
+          {selector: '.scrollfire-3', offset: 100, callback: function(e) {Materialize.fadeInImage($(e))} }
         ];
         Materialize.scrollFire(options);
         $('.scrollspy').scrollSpy({scrollOffset:15});
