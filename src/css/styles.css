@@ -69,3 +69,7 @@ h2 {
 
 .scrollfire-1, .scrollfire-2, .scrollfire-3 {
   opacity: 0; }
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 3rem; } }
