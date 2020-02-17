@@ -18,13 +18,17 @@
 .bold {
   font-weight: 700;
 }
+.huge {
+  font-size: 72pt;
+  z-depth: 1000;
+}
 
 nav {
   box-shadow: none !important;
   background: none;
   .pinned {
     .brand-logo {
-      position: fixed;
+      // position: fixed;
     }
   }
   ul a {
@@ -62,8 +66,11 @@ nav {
   z-index: -1;
 }
 .parallax-container {
-  height: 564px;
-  margin-top: -64px;
+  // height: 564px;
+  height: 75vh;
+  // margin-top: -64px;
+  top: -64px;
+  margin-bottom: -64px;
 }
 h2 {
   font-size: 1.25rem;

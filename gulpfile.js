@@ -77,7 +77,7 @@ gulp.task('sass', function() {
 })
 
 // Template Engine
-gulp.task('nunjucks', function() {
+gulp.task('nunjucks', function(done) {
   // Gets .html and .njk (nunjucks) files in pages
  return gulp.src('src/pages/**/*.+(html|njk)')
  // Renders template with nunjucks
@@ -88,7 +88,13 @@ gulp.task('nunjucks', function() {
    }))
  // output files in src folder (moved to dist folder for production)
  .pipe(gulp.dest('src'))
+ done();
 });
+
+gulp.task('reload', function(done) {
+  browserSync.reload();
+  done();
+})
 
 // Watchers (watch for changes to files with following extensions; run task in [] or reload browserSync server)
 gulp.task('watch', function() {
@@ -99,7 +105,8 @@ gulp.task('watch', function() {
 
   // gulp 4.x now requires a function to be passed in gulp.watch
   gulp.watch('src/scss/**/*.scss', gulp.series('sass'));
-  gulp.watch('src/**/*.+(html|njk)', gulp.series('nunjucks'));
+  // gulp.watch('src/**/*.+(html|njk)', gulp.series('nunjucks', 'reload'));
+  gulp.watch('src/**/*.+(html|njk)').on('change', gulp.series('nunjucks'));
   gulp.watch('src/*.+(html|php)').on('change', browserSync.reload);
   // gulp.watch('src/js/**/*.js').on('change', browserSync.reload);
 })
