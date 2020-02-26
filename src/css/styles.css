@@ -4,6 +4,40 @@
 * {
   font-family: 'Oxygen'; }
 
+.dark-gray {
+  background-color: #40514e; }
+
+.dark-gray-text {
+  color: #40514e; }
+
+.blue-gray {
+  background-color: #11999e; }
+
+.blue-gray-text {
+  color: #11999e; }
+
+.med-gray {
+  background-color: #30e3ca; }
+
+.med-gray-text {
+  color: #30e3ca; }
+
+.light-gray {
+  background-color: #e4f9f5; }
+
+.light-gray-text {
+  color: #e4f9f5; }
+
+.profesh-blue {
+  background-color: #2f89fc; }
+
+.profesh-blue-text {
+  color: #2f89fc; }
+
+.center-img {
+  display: block;
+  margin: 0 auto; }
+
 .shadow {
   text-shadow: .05em .05em .15em black; }
 
